@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvhc1tsoj3e6d"]
+
+[ext_resource type="Script" path="res://objects/ui/screens/title_screen/title_screen.gd" id="1_kfvfr"]
+
+[node name="TitleScreen" type="CenterContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kfvfr")
+
+[node name="Outer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Logo" type="MarginContainer" parent="Outer"]
+layout_mode = 2
+
+[node name="LogoTexture" type="Label" parent="Outer/Logo"]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 120
+text = "SKYWARD TRIALS"
+
+[node name="Actions" type="HBoxContainer" parent="Outer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="PlayButton" type="Button" parent="Outer/Actions"]
+layout_mode = 2
+text = "Play"
+
+[node name="OptionsButton" type="Button" parent="Outer/Actions"]
+visible = false
+layout_mode = 2
+text = "Options"
+
+[node name="QuitButton" type="Button" parent="Outer/Actions"]
+layout_mode = 2
+text = "Quit
+"
+
+[node name="Padding" type="MarginContainer" parent="Outer"]
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 2
+size_flags_vertical = 3
+
+[connection signal="pressed" from="Outer/Actions/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Outer/Actions/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="Outer/Actions/QuitButton" to="." method="_on_quit_button_pressed"]

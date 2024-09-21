@@ -1,0 +1,7 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://b6a6yognk4fuc"]
+
+[ext_resource type="FontFile" uid="uid://pegoo4cdsu8t" path="res://components/theme/averia.ttf" id="1_0dvkw"]
+
+[resource]
+base_font = ExtResource("1_0dvkw")
+variation_embolden = 1.0

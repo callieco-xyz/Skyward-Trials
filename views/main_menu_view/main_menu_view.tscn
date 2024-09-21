@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://2nusjnwlsgf6"]
+
+[ext_resource type="Script" path="res://views/main_menu_view/main_menu_view.gd" id="1_8egl2"]
+[ext_resource type="PackedScene" uid="uid://cvhc1tsoj3e6d" path="res://objects/ui/screens/title_screen/title_screen.tscn" id="1_33ead"]
+[ext_resource type="PackedScene" uid="uid://nprospe4s6ac" path="res://objects/ui/screens/options_screen/options_screen.tscn" id="2_lov8q"]
+[ext_resource type="PackedScene" uid="uid://dbq8yde78hy0q" path="res://objects/ui/screens/level_selection_screen/level_selection_screen.tscn" id="3_8ty3a"]
+
+[node name="MainMenuView" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8egl2")
+
+[node name="Outer" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Tabs" type="TabContainer" parent="Outer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+current_tab = 0
+tabs_visible = false
+
+[node name="TitleScreen" parent="Outer/Tabs" instance=ExtResource("1_33ead")]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="OptionScreen" parent="Outer/Tabs" instance=ExtResource("2_lov8q")]
+visible = false
+layout_mode = 2
+
+[node name="LevelSelection" parent="Outer/Tabs" instance=ExtResource("3_8ty3a")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="Control" type="Control" parent="Outer"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

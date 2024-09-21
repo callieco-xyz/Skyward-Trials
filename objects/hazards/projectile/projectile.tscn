@@ -1,0 +1,68 @@
+[gd_scene load_steps=12 format=3 uid="uid://5j5h7i5dttfk"]
+
+[ext_resource type="Script" path="res://objects/hazards/projectile/projectile.gd" id="1_eutnv"]
+[ext_resource type="Texture2D" uid="uid://dqmy2i5xwaaht" path="res://objects/tilemaps/assets/tiles.png" id="1_okoyc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8c1vb"]
+atlas = ExtResource("1_okoyc")
+region = Rect2(600, 300, 150, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_flvok"]
+atlas = ExtResource("1_okoyc")
+region = Rect2(600, 200, 150, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41isw"]
+atlas = ExtResource("1_okoyc")
+region = Rect2(600, 400, 150, 100)
+
+[sub_resource type="Gradient" id="Gradient_8pdwt"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ahov7"]
+gradient = SubResource("Gradient_8pdwt")
+
+[sub_resource type="Curve" id="Curve_rx5xc"]
+_data = [Vector2(0, 0), 0.0, 14.1053, 0, 1, Vector2(0.0708955, 1), 0.0, 0.0, 0, 0, Vector2(0.335821, 0), -1.58051, -1.58051, 0, 0, Vector2(0.570895, 0.66), 0.0, 0.0, 0, 0, Vector2(1, 0), -1.53809, 0.0, 1, 0]
+point_count = 5
+
+[sub_resource type="CurveTexture" id="CurveTexture_pm3ge"]
+curve = SubResource("Curve_rx5xc")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_od2f1"]
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 19.74
+initial_velocity_max = 49.35
+scale_min = 4.5
+scale_max = 5.5
+scale_curve = SubResource("CurveTexture_pm3ge")
+color_ramp = SubResource("GradientTexture1D_ahov7")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_su3in"]
+radius = 26.0768
+
+[node name="Projectile" type="Area2D"]
+script = ExtResource("1_eutnv")
+
+[node name="Sprites" type="Node2D" parent="."]
+
+[node name="Layer1" type="Sprite2D" parent="Sprites"]
+texture = SubResource("AtlasTexture_8c1vb")
+
+[node name="Layer2" type="Sprite2D" parent="Sprites"]
+texture = SubResource("AtlasTexture_flvok")
+
+[node name="Layer3" type="Sprite2D" parent="Sprites"]
+texture = SubResource("AtlasTexture_41isw")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Sprites"]
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_od2f1")
+lifetime = 0.7
+preprocess = 2.0
+local_coords = true
+trail_enabled = true
+trail_lifetime = 1.25
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_su3in")

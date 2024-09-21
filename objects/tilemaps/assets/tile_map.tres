@@ -1,0 +1,71 @@
+[gd_resource type="TileSet" load_steps=12 format=3 uid="uid://bl7wr21vcgyff"]
+
+[ext_resource type="Texture2D" uid="uid://dqmy2i5xwaaht" path="res://objects/tilemaps/assets/tiles.png" id="1_aijt6"]
+[ext_resource type="PackedScene" uid="uid://in2yx32lcnle" path="res://objects/hazards/turret/red_turret_on.tscn" id="2_0cmkr"]
+[ext_resource type="PackedScene" uid="uid://bupcojfyr7avh" path="res://objects/hazards/turret/red_turret_off.tscn" id="3_dfonn"]
+[ext_resource type="PackedScene" uid="uid://b12eicxjabwf7" path="res://objects/hazards/turret/purple_turret_on.tscn" id="4_tipeo"]
+[ext_resource type="PackedScene" uid="uid://csmatcm07v1ny" path="res://objects/hazards/turret/purple_turret_off.tscn" id="5_5vvgx"]
+[ext_resource type="PackedScene" uid="uid://b8ocse6yu1xmt" path="res://objects/hazards/turret/green_turret_on.tscn" id="6_l46tc"]
+[ext_resource type="PackedScene" uid="uid://bxgtcy4waqirs" path="res://objects/hazards/turret/green_turret_off.tscn" id="7_vw2ld"]
+[ext_resource type="PackedScene" uid="uid://d04dq2itw4x7s" path="res://objects/hazards/blink_block/blink_block.tscn" id="8_ncuif"]
+[ext_resource type="PackedScene" uid="uid://dogtpcyjwc873" path="res://objects/hazards/blink_block/blink_block_off.tscn" id="9_fl3u6"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1nbha"]
+texture = ExtResource("1_aijt6")
+texture_region_size = Vector2i(150, 200)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, -50)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -50, -75, -50, -75, 50, 0, 50, 75, 50, 75, -50)
+1:0/animation_columns = 1
+1:0/0 = 0
+1:0/0/texture_origin = Vector2i(0, -50)
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -50, -75, -50, -75, 50, 0, 50, 75, 50, 75, -50)
+2:0/0 = 0
+2:0/0/texture_origin = Vector2i(0, -50)
+3:0/0 = 0
+3:0/0/texture_origin = Vector2i(0, -50)
+4:0/0 = 0
+4:0/0/texture_origin = Vector2i(0, -50)
+5:0/0 = 0
+5:0/0/texture_origin = Vector2i(0, -50)
+6:0/0 = 0
+6:0/0/texture_origin = Vector2i(0, -50)
+7:0/0 = 0
+7:0/0/texture_origin = Vector2i(0, -50)
+0:1/size_in_atlas = Vector2i(1, 2)
+0:1/0 = 0
+0:1/0/texture_origin = Vector2i(0, -50)
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -50, -75, -50, -75, 50, 0, 50, 75, 50, 75, -50)
+0:1/0/physics_layer_1/polygon_0/points = PackedVector2Array(0, -50, -75, -50, -75, 50, 0, 50, 75, 50, 75, -50)
+8:0/0 = 0
+8:0/0/texture_origin = Vector2i(0, -50)
+9:0/size_in_atlas = Vector2i(1, 2)
+9:0/0 = 0
+9:0/0/texture_origin = Vector2i(0, -50)
+1:1/size_in_atlas = Vector2i(1, 2)
+1:1/0 = 0
+1:1/0/texture_origin = Vector2i(0, -50)
+2:1/size_in_atlas = Vector2i(1, 2)
+2:1/0 = 0
+2:1/0/texture_origin = Vector2i(0, -50)
+3:1/size_in_atlas = Vector2i(1, 2)
+3:1/0 = 0
+3:1/0/texture_origin = Vector2i(0, -50)
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_j1vrr"]
+scenes/1/scene = ExtResource("2_0cmkr")
+scenes/2/scene = ExtResource("3_dfonn")
+scenes/3/scene = ExtResource("4_tipeo")
+scenes/4/scene = ExtResource("5_5vvgx")
+scenes/5/scene = ExtResource("6_l46tc")
+scenes/6/scene = ExtResource("7_vw2ld")
+scenes/7/scene = ExtResource("8_ncuif")
+scenes/8/scene = ExtResource("9_fl3u6")
+
+[resource]
+tile_layout = 5
+tile_size = Vector2i(150, 100)
+physics_layer_0/collision_layer = 1
+physics_layer_1/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_1nbha")
+sources/1 = SubResource("TileSetScenesCollectionSource_j1vrr")

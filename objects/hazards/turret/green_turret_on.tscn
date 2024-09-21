@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8ocse6yu1xmt"]
+
+[ext_resource type="PackedScene" uid="uid://d0p3llvivmt2o" path="res://objects/hazards/turret/turret.tscn" id="1_7s261"]
+
+[node name="GreenTurretOn" instance=ExtResource("1_7s261")]
+color = 1
+on = true

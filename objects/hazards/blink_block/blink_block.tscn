@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://d04dq2itw4x7s"]
+
+[ext_resource type="Script" path="res://objects/hazards/blink_block/blink_block.gd" id="1_4tenu"]
+[ext_resource type="Texture2D" uid="uid://dqmy2i5xwaaht" path="res://objects/tilemaps/assets/tiles.png" id="2_fwe0t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2s5sy"]
+atlas = ExtResource("2_fwe0t")
+region = Rect2(900, 0, 150, 200)
+
+[node name="BlinkBlock" type="Node2D"]
+script = ExtResource("1_4tenu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.9)
+texture = SubResource("AtlasTexture_2s5sy")

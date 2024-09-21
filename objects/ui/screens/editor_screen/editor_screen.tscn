@@ -1,0 +1,208 @@
+[gd_scene load_steps=4 format=3 uid="uid://bs88txmkt1ib8"]
+
+[ext_resource type="Texture2D" uid="uid://urw4r7giaro0" path="res://components/theme/assets/ui_elements.png" id="1_46i4i"]
+[ext_resource type="Script" path="res://objects/ui/screens/editor_screen/editor_screen.gd" id="1_srk7l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bltlc"]
+atlas = ExtResource("1_46i4i")
+region = Rect2(10, 160, 30, 30)
+
+[node name="EditorScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_srk7l")
+
+[node name="Sidebar" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -10.0
+offset_right = 20.0
+offset_bottom = 10.0
+grow_vertical = 2
+
+[node name="Actions" type="VBoxContainer" parent="Sidebar"]
+layout_mode = 2
+
+[node name="Info" type="HBoxContainer" parent="Sidebar/Actions"]
+layout_mode = 2
+
+[node name="InfoButton" type="Button" parent="Sidebar/Actions/Info"]
+custom_minimum_size = Vector2(100, 105)
+layout_mode = 2
+text = "Info"
+
+[node name="Play" type="HBoxContainer" parent="Sidebar/Actions"]
+layout_mode = 2
+
+[node name="PlayButton" type="Button" parent="Sidebar/Actions/Play"]
+custom_minimum_size = Vector2(100, 105)
+layout_mode = 2
+text = "Play"
+
+[node name="Tool1" type="HBoxContainer" parent="Sidebar/Actions"]
+layout_mode = 2
+
+[node name="SelectedTool" type="Button" parent="Sidebar/Actions/Tool1"]
+custom_minimum_size = Vector2(100, 105)
+layout_mode = 2
+text = "TOOL"
+
+[node name="ExpandButton" type="TextureButton" parent="Sidebar/Actions/Tool1"]
+layout_mode = 2
+size_flags_vertical = 4
+texture_normal = SubResource("AtlasTexture_bltlc")
+
+[node name="Options" type="HBoxContainer" parent="Sidebar/Actions/Tool1"]
+visible = false
+layout_mode = 2
+
+[node name="ToolChoice1" type="Button" parent="Sidebar/Actions/Tool1/Options"]
+custom_minimum_size = Vector2(100, 105)
+layout_mode = 2
+text = "TOOL"
+
+[node name="ToolChoice2" type="Button" parent="Sidebar/Actions/Tool1/Options"]
+custom_minimum_size = Vector2(100, 105)
+layout_mode = 2
+text = "TOOL"
+
+[node name="ToolChoice3" type="Button" parent="Sidebar/Actions/Tool1/Options"]
+custom_minimum_size = Vector2(100, 105)
+layout_mode = 2
+text = "TOOL"
+
+[node name="Tool2" type="HBoxContainer" parent="Sidebar/Actions"]
+layout_mode = 2
+
+[node name="SelectedTool" type="Button" parent="Sidebar/Actions/Tool2"]
+custom_minimum_size = Vector2(100, 105)
+layout_mode = 2
+text = "TOOL"
+
+[node name="ExpandButton" type="TextureButton" parent="Sidebar/Actions/Tool2"]
+layout_mode = 2
+size_flags_vertical = 4
+texture_normal = SubResource("AtlasTexture_bltlc")
+
+[node name="Options" type="HBoxContainer" parent="Sidebar/Actions/Tool2"]
+visible = false
+layout_mode = 2
+
+[node name="ToolChoice1" type="Button" parent="Sidebar/Actions/Tool2/Options"]
+custom_minimum_size = Vector2(100, 105)
+layout_mode = 2
+text = "TOOL"
+
+[node name="ToolChoice2" type="Button" parent="Sidebar/Actions/Tool2/Options"]
+custom_minimum_size = Vector2(100, 105)
+layout_mode = 2
+text = "TOOL"
+
+[node name="ToolChoice3" type="Button" parent="Sidebar/Actions/Tool2/Options"]
+custom_minimum_size = Vector2(100, 105)
+layout_mode = 2
+text = "TOOL"
+
+[node name="Tool3" type="HBoxContainer" parent="Sidebar/Actions"]
+layout_mode = 2
+
+[node name="SelectedTool" type="Button" parent="Sidebar/Actions/Tool3"]
+custom_minimum_size = Vector2(100, 105)
+layout_mode = 2
+text = "TOOL"
+
+[node name="ExpandButton" type="TextureButton" parent="Sidebar/Actions/Tool3"]
+layout_mode = 2
+size_flags_vertical = 4
+texture_normal = SubResource("AtlasTexture_bltlc")
+
+[node name="Options" type="HBoxContainer" parent="Sidebar/Actions/Tool3"]
+visible = false
+layout_mode = 2
+
+[node name="ToolChoice1" type="Button" parent="Sidebar/Actions/Tool3/Options"]
+custom_minimum_size = Vector2(100, 105)
+layout_mode = 2
+text = "TOOL"
+
+[node name="ToolChoice2" type="Button" parent="Sidebar/Actions/Tool3/Options"]
+custom_minimum_size = Vector2(100, 105)
+layout_mode = 2
+text = "TOOL"
+
+[node name="ToolChoice3" type="Button" parent="Sidebar/Actions/Tool3/Options"]
+custom_minimum_size = Vector2(100, 105)
+layout_mode = 2
+text = "TOOL"
+
+[node name="Tool4" type="HBoxContainer" parent="Sidebar/Actions"]
+layout_mode = 2
+
+[node name="SelectedTool" type="Button" parent="Sidebar/Actions/Tool4"]
+custom_minimum_size = Vector2(100, 105)
+layout_mode = 2
+text = "TOOL"
+
+[node name="ExpandButton" type="TextureButton" parent="Sidebar/Actions/Tool4"]
+layout_mode = 2
+size_flags_vertical = 4
+texture_normal = SubResource("AtlasTexture_bltlc")
+
+[node name="Options" type="HBoxContainer" parent="Sidebar/Actions/Tool4"]
+visible = false
+layout_mode = 2
+
+[node name="ToolChoice1" type="Button" parent="Sidebar/Actions/Tool4/Options"]
+custom_minimum_size = Vector2(100, 105)
+layout_mode = 2
+text = "TOOL"
+
+[node name="ToolChoice2" type="Button" parent="Sidebar/Actions/Tool4/Options"]
+custom_minimum_size = Vector2(100, 105)
+layout_mode = 2
+text = "TOOL"
+
+[node name="ToolChoice3" type="Button" parent="Sidebar/Actions/Tool4/Options"]
+custom_minimum_size = Vector2(100, 105)
+layout_mode = 2
+text = "TOOL"
+
+[node name="LevelInfo" type="PopupPanel" parent="."]
+initial_position = 1
+size = Vector2i(400, 342)
+visible = true
+
+[node name="Rows" type="VBoxContainer" parent="LevelInfo"]
+offset_left = 30.0
+offset_top = 30.0
+offset_right = 370.0
+offset_bottom = 312.0
+
+[node name="LevelName" type="Label" parent="LevelInfo/Rows"]
+layout_mode = 2
+text = "Level Name:"
+
+[node name="LevelNameInput" type="LineEdit" parent="LevelInfo/Rows"]
+layout_mode = 2
+context_menu_enabled = false
+
+[node name="LevelDesc" type="Label" parent="LevelInfo/Rows"]
+layout_mode = 2
+text = "Level Description:"
+
+[node name="LevelDescInput" type="TextEdit" parent="LevelInfo/Rows"]
+custom_minimum_size = Vector2(0, 108)
+layout_mode = 2
+context_menu_enabled = false
+
+[node name="SaveButton" type="Button" parent="LevelInfo/Rows"]
+layout_mode = 2
+text = "Save and Exit"
+
+[connection signal="pressed" from="Sidebar/Actions/Info/InfoButton" to="." method="_on_info_button_pressed"]

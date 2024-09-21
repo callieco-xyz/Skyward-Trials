@@ -1,0 +1,44 @@
+[gd_scene load_steps=2 format=3 uid="uid://nprospe4s6ac"]
+
+[ext_resource type="Script" path="res://objects/ui/screens/options_screen/options_screen.gd" id="1_av3qk"]
+
+[node name="OptionScreen" type="CenterContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_av3qk")
+metadata/_tab_index = 1
+
+[node name="GridContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "Options"
+
+[node name="PanelContainer" type="PanelContainer" parent="GridContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GridContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GridContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GridContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Configure a game setting"
+
+[node name="CheckBox" type="CheckBox" parent="GridContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Setting"
+
+[node name="BackButton" type="Button" parent="GridContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Back"
+
+[connection signal="pressed" from="GridContainer/PanelContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

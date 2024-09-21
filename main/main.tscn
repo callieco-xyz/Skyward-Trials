@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://djvvapt51qy11"]
+
+[ext_resource type="Script" path="res://main/main.gd" id="1_fj0tb"]
+[ext_resource type="PackedScene" uid="uid://2nusjnwlsgf6" path="res://views/main_menu_view/main_menu_view.tscn" id="2_ao4rv"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_fj0tb")
+
+[node name="Game" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="MainMenuView" parent="Game" instance=ExtResource("2_ao4rv")]
+
+[node name="Transitions" type="CanvasLayer" parent="."]
+
+[node name="Tick" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="Tick" to="." method="_on_tick_timeout"]

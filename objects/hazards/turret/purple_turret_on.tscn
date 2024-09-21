@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b12eicxjabwf7"]
+
+[ext_resource type="PackedScene" uid="uid://d0p3llvivmt2o" path="res://objects/hazards/turret/turret.tscn" id="1_ivol7"]
+
+[node name="PurpleTurretOn" instance=ExtResource("1_ivol7")]
+on = true

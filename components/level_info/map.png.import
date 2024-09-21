@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://cyqwet6n5dumb"
+path="res://.godot/imported/map.png-8e3424cb3bd8da707338bd33a9a55c9e.image"
+
+[deps]
+
+source_file="res://components/level_info/map.png"
+dest_files=["res://.godot/imported/map.png-8e3424cb3bd8da707338bd33a9a55c9e.image"]
+
+[params]
+

@@ -1,0 +1,95 @@
+[gd_scene load_steps=5 format=3 uid="uid://hyyautp3xmpd"]
+
+[ext_resource type="Script" path="res://objects/ui/elements/level_info_panel/level_info_panel.gd" id="1_qvp3m"]
+[ext_resource type="Texture2D" uid="uid://bf5648ardggce" path="res://components/theme/textures/texture_cross.tres" id="2_a2nyk"]
+
+[sub_resource type="Gradient" id="Gradient_7y5y1"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vti6u"]
+gradient = SubResource("Gradient_7y5y1")
+
+[node name="LevelInfoPanel" type="PanelContainer"]
+custom_minimum_size = Vector2(556, 0)
+offset_right = 44.0
+offset_bottom = 44.0
+theme_type_variation = &"InnerPanel"
+script = ExtResource("1_qvp3m")
+
+[node name="Cols" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="ImagePanel" type="PanelContainer" parent="Cols"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_type_variation = &"ImagePanel"
+
+[node name="LevelIcon" type="TextureRect" parent="Cols/ImagePanel"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = SubResource("GradientTexture2D_vti6u")
+
+[node name="Rows" type="VBoxContainer" parent="Cols"]
+layout_mode = 2
+
+[node name="LevelName" type="HBoxContainer" parent="Cols/Rows"]
+layout_mode = 2
+
+[node name="LevelName" type="Label" parent="Cols/Rows/LevelName"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"HeaderSmall"
+text = "Level Name"
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="Completed" type="TextureRect" parent="Cols/Rows/LevelName"]
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("2_a2nyk")
+
+[node name="LevelDesc" type="Label" parent="Cols/Rows"]
+layout_mode = 2
+text = "Level Description goes here, even if its really long"
+text_overrun_behavior = 3
+
+[node name="Actions" type="HBoxContainer" parent="Cols/Rows"]
+layout_mode = 2
+
+[node name="PlayButton" type="Button" parent="Cols/Rows/Actions"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+tooltip_text = "Play this level"
+mouse_filter = 1
+text = "Play"
+
+[node name="EditButton" type="Button" parent="Cols/Rows/Actions"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+tooltip_text = "Edit this level"
+mouse_filter = 1
+text = "Edit"
+
+[node name="ExportButton" type="Button" parent="Cols/Rows/Actions"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+text = "Share"
+
+[node name="DeleteButton" type="Button" parent="Cols/Rows/Actions"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+text = "Delete
+"
+
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
+[connection signal="focus_exited" from="." to="." method="_on_focus_exited"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="Cols/Rows/Actions/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Cols/Rows/Actions/DeleteButton" to="." method="_on_delete_button_pressed"]

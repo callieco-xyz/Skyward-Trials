@@ -1,0 +1,6 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://c8h008lqohp5s"]
+
+[ext_resource type="FontFile" uid="uid://pegoo4cdsu8t" path="res://components/theme/averia.ttf" id="1_72i2i"]
+
+[resource]
+base_font = ExtResource("1_72i2i")

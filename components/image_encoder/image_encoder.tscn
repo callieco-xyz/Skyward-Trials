@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://clp7psh1cj60i"]
+
+[ext_resource type="Script" path="res://components/image_encoder/image_encoder.gd" id="1_q20c8"]
+[ext_resource type="PackedScene" uid="uid://bkbf7m6wlvvqx" path="res://components/image_creator/image_creator.tscn" id="2_ln23k"]
+
+[node name="ImageEncoder" type="Node"]
+script = ExtResource("1_q20c8")
+
+[node name="ImageCreator" parent="." instance=ExtResource("2_ln23k")]
