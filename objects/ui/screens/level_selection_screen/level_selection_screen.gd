@@ -5,13 +5,23 @@ var level_info_panel_scene: PackedScene = preload("res://objects/ui/elements/lev
 var saved_levels_path: String = "res://saved_levels/"
 var saved_levels: Array[LevelInfo]
 
-@onready var level_select: GridContainer = $PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/LevelSelect
+@onready var scroll: ScrollContainer = $PanelContainer/VBoxContainer/ScrollContainer
+@onready var level_select: HFlowContainer = $PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/LevelSelect
 
 
 func _ready() -> void:
 	reset_levels()
+	set_levels_width()
+	get_tree().root.size_changed.connect(set_levels_width)
 	SignalBus.select_level_deleted.connect(reset_levels)
 
+
+func set_levels_width() -> void:
+	if get_viewport_rect().size.x > 1300:
+		level_select.custom_minimum_size.x = 1120
+	if get_viewport_rect().size.x > 1900:
+		level_select.custom_minimum_size.x = 1680
+	scroll.custom_minimum_size.y = get_viewport_rect().size.y * 0.4
 
 func reset_levels() -> void:
 	for level in level_select.get_children():

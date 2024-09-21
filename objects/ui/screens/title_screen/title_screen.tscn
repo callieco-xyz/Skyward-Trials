@@ -20,32 +20,39 @@ layout_mode = 2
 layout_mode = 2
 theme_type_variation = &"HeaderLarge"
 theme_override_constants/outline_size = 15
-theme_override_font_sizes/font_size = 120
+theme_override_font_sizes/font_size = 100
 text = "SKYWARD TRIALS"
 
-[node name="Actions" type="HBoxContainer" parent="Outer"]
+[node name="PanelContainer" type="PanelContainer" parent="Outer"]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="PlayButton" type="Button" parent="Outer/Actions"]
+[node name="Actions" type="HBoxContainer" parent="Outer/PanelContainer"]
+custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="PlayButton" type="Button" parent="Outer/PanelContainer/Actions"]
+layout_mode = 2
+size_flags_horizontal = 3
 text = "Play"
 
-[node name="OptionsButton" type="Button" parent="Outer/Actions"]
-visible = false
+[node name="OptionsButton" type="Button" parent="Outer/PanelContainer/Actions"]
 layout_mode = 2
+size_flags_horizontal = 3
 text = "Options"
 
-[node name="QuitButton" type="Button" parent="Outer/Actions"]
+[node name="HelpButton" type="Button" parent="Outer/PanelContainer/Actions"]
 layout_mode = 2
+size_flags_horizontal = 3
+text = "Help"
+
+[node name="QuitButton" type="Button" parent="Outer/PanelContainer/Actions"]
+layout_mode = 2
+size_flags_horizontal = 3
 text = "Quit
 "
 
-[node name="Padding" type="MarginContainer" parent="Outer"]
-custom_minimum_size = Vector2(0, 500)
-layout_mode = 2
-size_flags_vertical = 3
-
-[connection signal="pressed" from="Outer/Actions/PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="Outer/Actions/OptionsButton" to="." method="_on_options_button_pressed"]
-[connection signal="pressed" from="Outer/Actions/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Outer/PanelContainer/Actions/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Outer/PanelContainer/Actions/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="Outer/PanelContainer/Actions/QuitButton" to="." method="_on_quit_button_pressed"]

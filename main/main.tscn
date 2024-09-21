@@ -6,7 +6,7 @@
 [node name="Main" type="Node"]
 script = ExtResource("1_fj0tb")
 
-[node name="Game" type="CanvasLayer" parent="."]
+[node name="Game" type="CanvasLayer" parent="." groups=["GameCanvas"]]
 follow_viewport_enabled = true
 
 [node name="MainMenuView" parent="Game" instance=ExtResource("2_ao4rv")]
