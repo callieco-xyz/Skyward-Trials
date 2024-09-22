@@ -39,7 +39,7 @@ scale_curve = SubResource("CurveTexture_vjinn")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8hwk7"]
 atlas = ExtResource("1_nhmi2")
-region = Rect2(1240, 220, 60, 60)
+region = Rect2(654.545, 224.089, 41.8181, 50)
 
 [node name="Turret" type="Node2D"]
 script = ExtResource("1_t2h6w")

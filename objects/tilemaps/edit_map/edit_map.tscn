@@ -1,10 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://d08dj2nde4i82"]
+[gd_scene load_steps=3 format=3 uid="uid://d08dj2nde4i82"]
 
 [ext_resource type="Script" path="res://objects/tilemaps/edit_map/edit_map.gd" id="1_j3acj"]
+[ext_resource type="TileSet" uid="uid://bl7wr21vcgyff" path="res://objects/tilemaps/assets/tile_map.tres" id="2_iso35"]
 
 [node name="EditMap" type="Node2D"]
+z_as_relative = false
+y_sort_enabled = true
 script = ExtResource("1_j3acj")
 
 [node name="LevelMap" type="TileMapLayer" parent="."]
+z_as_relative = false
+y_sort_enabled = true
+tile_set = ExtResource("2_iso35")
 
 [node name="EditorHint" type="TileMapLayer" parent="."]
+modulate = Color(1, 1, 1, 0.5)
+z_as_relative = false
+y_sort_enabled = true
+tile_set = ExtResource("2_iso35")

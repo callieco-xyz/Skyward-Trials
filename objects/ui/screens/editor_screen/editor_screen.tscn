@@ -91,7 +91,6 @@ size_flags_vertical = 4
 texture_normal = SubResource("AtlasTexture_bltlc")
 
 [node name="Options" type="HBoxContainer" parent="Sidebar/Actions/Tool2"]
-visible = false
 layout_mode = 2
 
 [node name="ToolChoice1" type="Button" parent="Sidebar/Actions/Tool2/Options"]

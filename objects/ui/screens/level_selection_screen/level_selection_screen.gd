@@ -10,23 +10,25 @@ var saved_levels: Array[LevelInfo]
 
 
 func _ready() -> void:
-	reset_levels()
-	set_levels_width()
-	get_tree().root.size_changed.connect(set_levels_width)
-	SignalBus.select_level_deleted.connect(reset_levels)
+	repopulate_level_panels()
+	set_level_select_width()
+	get_tree().root.size_changed.connect(set_level_select_width)
+	SignalBus.select_level_deleted.connect(repopulate_level_panels)
 
 
-func set_levels_width() -> void:
-	if get_viewport_rect().size.x > 1300:
+func set_level_select_width() -> void:
+	var screen_width := get_viewport_rect().size.x
+	level_select.custom_minimum_size.x = 556
+	if screen_width > 1300:
 		level_select.custom_minimum_size.x = 1120
-	if get_viewport_rect().size.x > 1900:
+	if screen_width > 1900:
 		level_select.custom_minimum_size.x = 1680
 	scroll.custom_minimum_size.y = get_viewport_rect().size.y * 0.4
 
-func reset_levels() -> void:
+
+func repopulate_level_panels() -> void:
 	for level in level_select.get_children():
 		level.queue_free()
-		saved_levels = []
 	get_saved_levels()
 	populate_saved_levels()
 
@@ -38,11 +40,11 @@ func populate_saved_levels() -> void:
 		var new_level_panel = level_info_panel_scene.instantiate() as LevelInfoPanel
 		new_level_panel.level_info = level
 		level_select.add_child(new_level_panel)
-		
 
 
 func get_saved_levels() -> void:
 	var saved_level_files := DirAccess.get_files_at(saved_levels_path)
+	saved_levels.clear()
 	if saved_level_files.size() == 0:
 		return
 	for level_file in saved_level_files:

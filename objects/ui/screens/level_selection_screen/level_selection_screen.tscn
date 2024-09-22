@@ -36,6 +36,7 @@ size_flags_vertical = 3
 theme_type_variation = &"MarginMed"
 
 [node name="LevelSelect" type="HFlowContainer" parent="PanelContainer/VBoxContainer/ScrollContainer/MarginContainer"]
+custom_minimum_size = Vector2(556, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
