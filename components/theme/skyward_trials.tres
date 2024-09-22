@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=32 format=3 uid="uid://de15hbfcvkuph"]
+[gd_resource type="Theme" load_steps=30 format=3 uid="uid://de15hbfcvkuph"]
 
 [ext_resource type="FontVariation" uid="uid://c8h008lqohp5s" path="res://components/theme/averia_normal.tres" id="1_bsfoo"]
 [ext_resource type="StyleBox" uid="uid://c7ldb6rd6s7gq" path="res://components/theme/style_boxes/buttons/button_normal.tres" id="1_olgdi"]
@@ -9,7 +9,6 @@
 [ext_resource type="FontVariation" uid="uid://b6a6yognk4fuc" path="res://components/theme/averia_special.tres" id="4_pso5f"]
 [ext_resource type="StyleBox" uid="uid://call4d6v048v5" path="res://components/theme/style_boxes/panels/panel_inner_normal.tres" id="5_bqx3s"]
 [ext_resource type="StyleBox" uid="uid://dllcqlyayn527" path="res://components/theme/style_boxes/panels/image_panel.tres" id="5_jhxik"]
-[ext_resource type="Texture2D" uid="uid://urw4r7giaro0" path="res://components/theme/assets/ui_elements.png" id="7_jk0lm"]
 [ext_resource type="StyleBox" uid="uid://dhip6mpdj2kld" path="res://components/theme/style_boxes/inputs/textbox_normal.tres" id="9_jgaru"]
 [ext_resource type="StyleBox" uid="uid://bfwsov35wgopw" path="res://components/theme/style_boxes/inputs/textbox_disabled.tres" id="10_v6yav"]
 
@@ -47,20 +46,16 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_plwh3"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5ev2p"]
-atlas = ExtResource("7_jk0lm")
-region = Rect2(159, 109, 32, 32)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8jawv"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g5dnm"]
 content_margin_left = 10.0
-content_margin_top = 10.0
+content_margin_top = 6.0
 content_margin_right = 10.0
-content_margin_bottom = 10.0
-texture = SubResource("AtlasTexture_5ev2p")
-texture_margin_left = 10.0
-texture_margin_top = 10.0
-texture_margin_right = 10.0
-texture_margin_bottom = 10.0
+content_margin_bottom = 6.0
+bg_color = Color(0.133196, 0.133196, 0.133196, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
 
 [resource]
 default_font = ExtResource("1_bsfoo")
@@ -130,4 +125,4 @@ TextEdit/styles/focus = SubResource("StyleBoxEmpty_plwh3")
 TextEdit/styles/normal = ExtResource("9_jgaru")
 TextEdit/styles/read_only = ExtResource("10_v6yav")
 TooltipLabel/colors/font_color = Color(1, 1, 1, 1)
-TooltipPanel/styles/panel = SubResource("StyleBoxTexture_8jawv")
+TooltipPanel/styles/panel = SubResource("StyleBoxFlat_g5dnm")

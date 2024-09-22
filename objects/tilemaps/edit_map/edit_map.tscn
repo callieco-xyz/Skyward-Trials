@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://d08dj2nde4i82"]
+
+[ext_resource type="Script" path="res://objects/tilemaps/edit_map/edit_map.gd" id="1_j3acj"]
+
+[node name="EditMap" type="Node2D"]
+script = ExtResource("1_j3acj")
+
+[node name="LevelMap" type="TileMapLayer" parent="."]
+
+[node name="EditorHint" type="TileMapLayer" parent="."]

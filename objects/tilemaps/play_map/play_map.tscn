@@ -3,7 +3,7 @@
 [ext_resource type="TileSet" uid="uid://bl7wr21vcgyff" path="res://objects/tilemaps/assets/tile_map.tres" id="1_4l20c"]
 [ext_resource type="Script" path="res://objects/tilemaps/play_map/play_map.gd" id="1_5q4j1"]
 
-[node name="PlayMap" type="Node2D"]
+[node name="PlayMap" type="Node2D" groups=["Map"]]
 script = ExtResource("1_5q4j1")
 bob_speed = 0.5
 

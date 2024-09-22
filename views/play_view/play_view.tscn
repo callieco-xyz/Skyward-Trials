@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://bu8y3eepwy42f"]
+
+[ext_resource type="Script" path="res://views/play_view/play_view.gd" id="1_5u3ov"]
+[ext_resource type="PackedScene" uid="uid://cxqfaq2qt3dfx" path="res://objects/tilemaps/play_map/play_map.tscn" id="1_mx7p0"]
+[ext_resource type="PackedScene" uid="uid://c1pcekr6vlswm" path="res://objects/ui/elements/pause/play_pause_popup.tscn" id="2_7feqv"]
+
+[node name="PlayView" type="Node2D"]
+script = ExtResource("1_5u3ov")
+
+[node name="PlayMap" parent="." instance=ExtResource("1_mx7p0")]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="PlayPausePopup" parent="UI" instance=ExtResource("2_7feqv")]

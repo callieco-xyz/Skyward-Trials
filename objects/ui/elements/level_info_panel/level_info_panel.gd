@@ -25,7 +25,8 @@ func set_up_info() -> void:
 		return
 	level_name.text = level_info.level_name
 	level_desc.text = level_info.level_desc
-	icon.texture = ImageTexture.create_from_image(level_info.level_graphic)
+	if level_info.level_graphic:
+		icon.texture = ImageTexture.create_from_image(level_info.level_graphic)
 	if level_info.completed == false:
 		completed.texture = crossed
 		export_button.disabled = true
@@ -38,6 +39,10 @@ func set_up_info() -> void:
 func _on_play_button_pressed() -> void:
 	if level_info:
 		SignalBus.level_play_pressed.emit(level_info)
+
+
+func _on_edit_button_pressed() -> void:
+		SignalBus.level_edit_pressed.emit(level_info)
 
 
 func set_hover_state_on() -> void:

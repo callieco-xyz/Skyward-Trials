@@ -1,0 +1,44 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1pcekr6vlswm"]
+
+[ext_resource type="Script" path="res://objects/ui/elements/pause/play_pause_popup.gd" id="1_7oliu"]
+
+[node name="PlayPausePopup" type="PopupPanel"]
+process_mode = 3
+transparent_bg = true
+initial_position = 1
+size = Vector2i(410, 166)
+script = ExtResource("1_7oliu")
+
+[node name="Rows" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(350, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 30.0
+offset_right = -30.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Paused" type="Label" parent="Rows"]
+layout_mode = 2
+theme_type_variation = &"HeaderSmall"
+text = "Game Paused"
+horizontal_alignment = 1
+
+[node name="Actions" type="HBoxContainer" parent="Rows"]
+layout_mode = 2
+
+[node name="ExitButton" type="Button" parent="Rows/Actions"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Exit to Menu"
+
+[node name="EditButton" type="Button" parent="Rows/Actions"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Edit this Level"
+
+[connection signal="pressed" from="Rows/Actions/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="Rows/Actions/EditButton" to="." method="_on_edit_button_pressed"]

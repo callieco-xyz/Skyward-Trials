@@ -4,9 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://2nusjnwlsgf6" path="res://views/main_menu_view/main_menu_view.tscn" id="2_ao4rv"]
 
 [node name="Main" type="Node"]
+process_mode = 3
 script = ExtResource("1_fj0tb")
 
 [node name="Game" type="CanvasLayer" parent="." groups=["GameCanvas"]]
+process_mode = 1
 follow_viewport_enabled = true
 
 [node name="MainMenuView" parent="Game" instance=ExtResource("2_ao4rv")]
