@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=30 format=3 uid="uid://de15hbfcvkuph"]
+[gd_resource type="Theme" load_steps=35 format=3 uid="uid://de15hbfcvkuph"]
 
 [ext_resource type="FontVariation" uid="uid://c8h008lqohp5s" path="res://components/theme/averia_normal.tres" id="1_bsfoo"]
 [ext_resource type="StyleBox" uid="uid://c7ldb6rd6s7gq" path="res://components/theme/style_boxes/buttons/button_normal.tres" id="1_olgdi"]
@@ -11,8 +11,13 @@
 [ext_resource type="StyleBox" uid="uid://dllcqlyayn527" path="res://components/theme/style_boxes/panels/image_panel.tres" id="5_jhxik"]
 [ext_resource type="StyleBox" uid="uid://dhip6mpdj2kld" path="res://components/theme/style_boxes/inputs/textbox_normal.tres" id="9_jgaru"]
 [ext_resource type="StyleBox" uid="uid://bfwsov35wgopw" path="res://components/theme/style_boxes/inputs/textbox_disabled.tres" id="10_v6yav"]
+[ext_resource type="StyleBox" uid="uid://b2rw4dakon2t6" path="res://components/theme/style_boxes/buttons/tool_button_hover.tres" id="11_8utc6"]
+[ext_resource type="StyleBox" uid="uid://dc82388g6k2i7" path="res://components/theme/style_boxes/buttons/tool_button_normal.tres" id="12_llayu"]
+[ext_resource type="StyleBox" uid="uid://44vne6lktkax" path="res://components/theme/style_boxes/buttons/tool_button_pressed.tres" id="13_88wr4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q2rt8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oqrnt"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j1rat"]
 
@@ -46,6 +51,8 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_plwh3"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bqiv1"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g5dnm"]
 content_margin_left = 10.0
 content_margin_top = 6.0
@@ -73,6 +80,8 @@ Button/styles/hover_pressed = ExtResource("4_7kscv")
 Button/styles/hover_pressed_mirrored = ExtResource("4_7kscv")
 Button/styles/normal = ExtResource("1_olgdi")
 Button/styles/pressed = ExtResource("4_7kscv")
+ButtonOptionPopup/base_type = &"PopupPanel"
+ButtonOptionPopup/styles/panel = SubResource("StyleBoxEmpty_oqrnt")
 CheckBox/styles/disabled = SubResource("StyleBoxEmpty_j1rat")
 CheckBox/styles/focus = SubResource("StyleBoxEmpty_mk3gd")
 CheckBox/styles/hover = SubResource("StyleBoxEmpty_dmobw")
@@ -124,5 +133,11 @@ TextEdit/colors/selection_color = Color(0.00784314, 0.768627, 0.752941, 1)
 TextEdit/styles/focus = SubResource("StyleBoxEmpty_plwh3")
 TextEdit/styles/normal = ExtResource("9_jgaru")
 TextEdit/styles/read_only = ExtResource("10_v6yav")
+ToolButton/base_type = &"Button"
+ToolButton/styles/focus = SubResource("StyleBoxEmpty_bqiv1")
+ToolButton/styles/hover = ExtResource("11_8utc6")
+ToolButton/styles/hover_pressed = ExtResource("13_88wr4")
+ToolButton/styles/normal = ExtResource("12_llayu")
+ToolButton/styles/pressed = ExtResource("13_88wr4")
 TooltipLabel/colors/font_color = Color(1, 1, 1, 1)
 TooltipPanel/styles/panel = SubResource("StyleBoxFlat_g5dnm")
