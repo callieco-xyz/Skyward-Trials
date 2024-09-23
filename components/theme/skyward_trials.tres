@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=35 format=3 uid="uid://de15hbfcvkuph"]
+[gd_resource type="Theme" load_steps=36 format=3 uid="uid://de15hbfcvkuph"]
 
 [ext_resource type="FontVariation" uid="uid://c8h008lqohp5s" path="res://components/theme/averia_normal.tres" id="1_bsfoo"]
 [ext_resource type="StyleBox" uid="uid://c7ldb6rd6s7gq" path="res://components/theme/style_boxes/buttons/button_normal.tres" id="1_olgdi"]
@@ -44,6 +44,8 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jrcro"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_op0g2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_64m26"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jhdcv"]
 
@@ -97,10 +99,13 @@ CheckButton/styles/pressed = SubResource("StyleBoxEmpty_jrcro")
 FlatTabs/styles/panel = SubResource("StyleBoxEmpty_op0g2")
 GridContainer/constants/h_separation = 20
 GridContainer/constants/v_separation = 20
+HSeparator/constants/separation = 30
+HSeparator/styles/separator = SubResource("StyleBoxEmpty_64m26")
 HeaderLarge/colors/font_color = Color(1, 1, 1, 1)
 HeaderLarge/constants/outline_size = 10
 HeaderLarge/font_sizes/font_size = 42
 HeaderLarge/fonts/font = ExtResource("4_pso5f")
+HeaderMedium/font_sizes/font_size = 36
 HeaderSmall/colors/font_color = Color(0, 0, 0, 1)
 HeaderSmall/font_sizes/font_size = 28
 ImagePanel/base_type = &"PanelContainer"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://d08dj2nde4i82"]
+[gd_scene load_steps=3 format=4 uid="uid://d08dj2nde4i82"]
 
 [ext_resource type="Script" path="res://objects/tilemaps/edit_map/edit_map.gd" id="1_j3acj"]
 [ext_resource type="TileSet" uid="uid://bl7wr21vcgyff" path="res://objects/tilemaps/assets/tile_map.tres" id="2_iso35"]
@@ -7,6 +7,12 @@
 z_as_relative = false
 y_sort_enabled = true
 script = ExtResource("1_j3acj")
+
+[node name="Border" type="TileMapLayer" parent="."]
+z_as_relative = false
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAD9//3/AAAIAAQAAAAGAP3/AAAIAAQAAAAQAP3/AAAIAAQAAAAaAP3/AAAIAAQAAAAkAP3/AAAIAAQAAAAuAP3/AAAIAAQAAAA4AP3/AAAIAAQAAABCAP3/AAAIAAQAAAD9/wYAAAAIAAQAAAD9/xAAAAAIAAQAAAD9/xoAAAAIAAQAAAD9/yQAAAAIAAQAAAD9/y4AAAAIAAQAAAD9/zgAAAAIAAQAAAD9/0IAAAAIAAQAAAAGAEIAAAAIAAQAAAAQAEIAAAAIAAQAAAAaAEIAAAAIAAQAAAAkAEIAAAAIAAQAAAAuAEIAAAAIAAQAAAA4AEIAAAAIAAQAAABCAEIAAAAIAAQAAABCADgAAAAIAAQAAABCAC4AAAAIAAQAAABCACQAAAAIAAQAAABCABoAAAAIAAQAAABCABAAAAAIAAQAAABCAAYAAAAIAAQAAAA=")
+tile_set = ExtResource("2_iso35")
 
 [node name="LevelMap" type="TileMapLayer" parent="."]
 z_as_relative = false

@@ -80,13 +80,13 @@ buttons = Array[ExtResource("3_trccg")]([ExtResource("17_tiudu"), ExtResource("1
 
 [node name="LevelInfo" type="PopupPanel" parent="." groups=["Popup"]]
 initial_position = 1
-size = Vector2i(400, 342)
+size = Vector2i(600, 304)
 
 [node name="Rows" type="VBoxContainer" parent="LevelInfo"]
 offset_left = 30.0
 offset_top = 30.0
-offset_right = 370.0
-offset_bottom = 312.0
+offset_right = 570.0
+offset_bottom = 274.0
 
 [node name="LevelName" type="Label" parent="LevelInfo/Rows"]
 layout_mode = 2
@@ -94,19 +94,41 @@ text = "Level Name:"
 
 [node name="LevelNameInput" type="LineEdit" parent="LevelInfo/Rows"]
 layout_mode = 2
+max_length = 50
 context_menu_enabled = false
 
 [node name="LevelDesc" type="Label" parent="LevelInfo/Rows"]
 layout_mode = 2
 text = "Level Description:"
 
-[node name="LevelDescInput" type="TextEdit" parent="LevelInfo/Rows"]
-custom_minimum_size = Vector2(0, 108)
+[node name="LevelDescInput" type="LineEdit" parent="LevelInfo/Rows"]
 layout_mode = 2
+max_length = 100
 context_menu_enabled = false
+shortcut_keys_enabled = false
 
-[node name="SaveButton" type="Button" parent="LevelInfo/Rows"]
+[node name="Warning" type="Label" parent="LevelInfo/Rows"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.352187, 0.222478, 1)
+text = "Your level needs a name to be saved."
+
+[node name="HBoxContainer" type="HBoxContainer" parent="LevelInfo/Rows"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="SaveButton" type="Button" parent="LevelInfo/Rows/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+disabled = true
 text = "Save and Exit"
 
+[node name="Discard" type="Button" parent="LevelInfo/Rows/HBoxContainer"]
+layout_mode = 2
+text = "Exit Without Saving"
+
 [connection signal="pressed" from="Sidebar/Actions/Info/InfoButton" to="." method="_on_info_button_pressed"]
+[connection signal="text_changed" from="LevelInfo/Rows/LevelNameInput" to="." method="_on_level_name_input_text_changed"]
+[connection signal="text_changed" from="LevelInfo/Rows/LevelDescInput" to="." method="_on_level_desc_input_text_changed"]
+[connection signal="pressed" from="LevelInfo/Rows/HBoxContainer/SaveButton" to="." method="_on_save_button_pressed"]
+[connection signal="pressed" from="LevelInfo/Rows/HBoxContainer/Discard" to="." method="_on_discard_pressed"]

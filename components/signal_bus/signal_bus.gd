@@ -6,6 +6,7 @@ signal tick
 signal title_play_pressed
 signal title_options_pressed
 signal title_back_pressed
+signal title_help_pressed
 
 signal level_play_pressed(level_info: LevelInfo)
 signal level_edit_pressed(level_info: LevelInfo)

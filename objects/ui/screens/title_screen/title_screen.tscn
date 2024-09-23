@@ -55,4 +55,5 @@ text = "Quit
 
 [connection signal="pressed" from="Outer/PanelContainer/Actions/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="Outer/PanelContainer/Actions/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="Outer/PanelContainer/Actions/HelpButton" to="." method="_on_help_button_pressed"]
 [connection signal="pressed" from="Outer/PanelContainer/Actions/QuitButton" to="." method="_on_quit_button_pressed"]

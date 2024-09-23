@@ -1,0 +1,134 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfglp68dxpnuw"]
+
+[ext_resource type="Script" path="res://objects/ui/screens/help_screen/help_screen.gd" id="1_0yymr"]
+
+[node name="HelpScreen" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+script = ExtResource("1_0yymr")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(850, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+
+[node name="Rows" type="VBoxContainer" parent="HBoxContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="Title" type="MarginContainer" parent="HBoxContainer/PanelContainer/Rows"]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="HBoxContainer/PanelContainer/Rows/Title"]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "Information and Help"
+
+[node name="HelpBox" type="ScrollContainer" parent="HBoxContainer/PanelContainer/Rows"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="Margin" type="MarginContainer" parent="HBoxContainer/PanelContainer/Rows/HelpBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HelpText" type="VBoxContainer" parent="HBoxContainer/PanelContainer/Rows/HelpBox/Margin"]
+layout_mode = 2
+
+[node name="PlayingTheGame" type="Label" parent="HBoxContainer/PanelContainer/Rows/HelpBox/Margin/HelpText"]
+layout_mode = 2
+theme_type_variation = &"HeaderMedium"
+text = "Playing the Game"
+
+[node name="PlayingTheGameText" type="Label" parent="HBoxContainer/PanelContainer/Rows/HelpBox/Margin/HelpText"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+text = "Skyward Trials is a dungeon crawler set high amongst the clouds. Each new challenger will face a range of hazards as they search for the two gems that unlock the exit portal. In addition to playing the game you can design your own levels and then, if you can complete them yourself, share them for others to play. When you finish a level and share it it is exported as a .PNG file that contains all the information another player needs to play your level."
+autowrap_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/PanelContainer/Rows/HelpBox/Margin/HelpText"]
+layout_mode = 2
+
+[node name="Blocks" type="Label" parent="HBoxContainer/PanelContainer/Rows/HelpBox/Margin/HelpText"]
+layout_mode = 2
+theme_type_variation = &"HeaderMedium"
+text = "Blocks
+"
+
+[node name="Ground" type="Label" parent="HBoxContainer/PanelContainer/Rows/HelpBox/Margin/HelpText"]
+layout_mode = 2
+theme_type_variation = &"HeaderSmall"
+text = "Ground and Walls"
+
+[node name="GroundandWallText" type="Label" parent="HBoxContainer/PanelContainer/Rows/HelpBox/Margin/HelpText"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+text = "You can walk normally on any grey slab floor, be careful near the edge as falling from the sky is bad for your health. Walls, surprisingly, block your movement - but they also block incoming projectiles and enemy movement too."
+autowrap_mode = 2
+
+[node name="Blink" type="Label" parent="HBoxContainer/PanelContainer/Rows/HelpBox/Margin/HelpText"]
+layout_mode = 2
+theme_type_variation = &"HeaderSmall"
+text = "Blink Blocks and Fade Blocks"
+
+[node name="BlinkText" type="Label" parent="HBoxContainer/PanelContainer/Rows/HelpBox/Margin/HelpText"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+text = "Blink Blocks (semi transparent glowing green block) are safe to stand on, while they remain mostly visible, however they will fade out and cause you to fall.
+Fade blocks (in pink) remain solid until the player stands on them, at which point you will have to be quick before they fade."
+autowrap_mode = 2
+
+[node name="Spikes" type="Label" parent="HBoxContainer/PanelContainer/Rows/HelpBox/Margin/HelpText"]
+layout_mode = 2
+theme_type_variation = &"HeaderSmall"
+text = "Spike Blocks"
+
+[node name="SpikeText" type="Label" parent="HBoxContainer/PanelContainer/Rows/HelpBox/Margin/HelpText"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+text = "Spike blocks have sharp spikes embedded in them, which will shoot up and injure you if you are in the way when they activate. Watch them closely for their timing and move swiftly."
+autowrap_mode = 2
+
+[node name="HSeparator3" type="HSeparator" parent="HBoxContainer/PanelContainer/Rows/HelpBox/Margin/HelpText"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/PanelContainer/Rows/HelpBox/Margin/HelpText"]
+layout_mode = 2
+theme_type_variation = &"HeaderMedium"
+text = "Start and End Portals"
+
+[node name="Label2" type="Label" parent="HBoxContainer/PanelContainer/Rows/HelpBox/Margin/HelpText"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+text = "The player begins each level on a large start portal covered in runes, from there they must search the level for two gems that will activate the end portal, sat between two pillars which indicate if the gems have been found."
+autowrap_mode = 2
+
+[node name="Back" type="MarginContainer" parent="HBoxContainer/PanelContainer/Rows"]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="HBoxContainer/PanelContainer/Rows/Back"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Back"
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[connection signal="pressed" from="HBoxContainer/PanelContainer/Rows/Back/BackButton" to="." method="_on_back_button_pressed"]

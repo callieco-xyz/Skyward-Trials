@@ -20,6 +20,9 @@ func _ready() -> void:
 	SignalBus.edit_tool_selected.connect(tool_changed)
 	if level_info == null:
 		level_info = LevelInfo.new()
+	if level_info:
+		if level_info.tilemap_data:
+			levelmap.tile_map_data = level_info.tilemap_data
 
 
 func _process(_delta: float) -> void:
