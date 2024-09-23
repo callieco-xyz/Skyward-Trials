@@ -24,6 +24,11 @@ SignalBus="*res://components/signal_bus/signal_bus.gd"
 
 gdscript/warnings/unused_signal=0
 
+[display]
+
+window/size/viewport_width=1200
+window/size/viewport_height=720
+
 [file_customization]
 
 folder_colors={

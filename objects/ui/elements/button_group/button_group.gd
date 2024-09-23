@@ -10,12 +10,6 @@ var popup_offset := Vector2(140.0, 0.0)
 @onready var selected_tool := $SelectedTool
 
 
-enum tool { 
-	WALL_BLOCK, SPIKE_BLOCK, SPIKES_OFFSET, BLINK_BLOCK, BLINK_OFFSET, WEAK_BLOCK,
-	TUR_RED, TUR_RED_OFFSET, TUR_GREEN, TUR_GREEN_OFFSET, TUR_PURPLE, TUR_PURPLE_OFFSET,
-	GROUND, DELETE }
-
-
 func _ready() -> void:
 	if buttons.size() > 0:
 		set_first_button()
@@ -35,12 +29,17 @@ func create_buttons() -> void:
 
 func create_button(button: EditorButtonData) -> void:
 	var new_button = EditorButton.new()
-	new_button.toggle_mode = true
 	new_button.theme_type_variation = "ToolButton"
 	new_button.icon = button.icon
 	new_button.tool_id = button.tool_id
 	new_button.tooltip_text = button.tooltip
+	new_button.tool_selected.connect(on_tool_button_pressed)
 	cols.add_child(new_button)
+
+
+func on_tool_button_pressed(_tool_id, icon) -> void:
+	selected_tool.icon = icon
+	options.hide()
 
 
 func _on_expand_button_pressed() -> void:

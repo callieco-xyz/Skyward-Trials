@@ -1,17 +1,26 @@
-[gd_scene load_steps=13 format=3 uid="uid://bs88txmkt1ib8"]
+[gd_scene load_steps=22 format=3 uid="uid://bs88txmkt1ib8"]
 
 [ext_resource type="Script" path="res://objects/ui/screens/editor_screen/editor_screen.gd" id="1_srk7l"]
+[ext_resource type="Texture2D" uid="uid://cppwgicy823nl" path="res://objects/ui/assets/btn_info.tres" id="2_w78r1"]
 [ext_resource type="PackedScene" uid="uid://ch6066bqbymmh" path="res://objects/ui/elements/button_group/button_group.tscn" id="2_ye877"]
 [ext_resource type="Script" path="res://objects/ui/elements/button_group/editor_button_data.gd" id="3_trccg"]
+[ext_resource type="Texture2D" uid="uid://b4qncyvaluqrl" path="res://objects/ui/assets/btn_play.tres" id="3_yroq8"]
 [ext_resource type="Resource" uid="uid://tny360bps7l0" path="res://objects/ui/elements/button_group/buttons/ground.tres" id="4_2mws2"]
 [ext_resource type="Resource" uid="uid://br5g3kxhp4c4s" path="res://objects/ui/elements/button_group/buttons/wall.tres" id="5_8svv8"]
+[ext_resource type="Resource" uid="uid://c6cl4sm0n667w" path="res://objects/ui/elements/button_group/buttons/start.tres" id="6_0yw3b"]
 [ext_resource type="Resource" uid="uid://f0ne33bs3o5g" path="res://objects/ui/elements/button_group/buttons/delete.tres" id="6_1o5j7"]
 [ext_resource type="Resource" uid="uid://dxi48mk6qixo1" path="res://objects/ui/elements/button_group/buttons/red_turret.tres" id="7_hpo54"]
+[ext_resource type="Resource" uid="uid://xqu88g3063jo" path="res://objects/ui/elements/button_group/buttons/end.tres" id="7_u7cra"]
 [ext_resource type="Resource" uid="uid://cu603uql06gir" path="res://objects/ui/elements/button_group/buttons/red_turret_offset.tres" id="8_hlv5t"]
 [ext_resource type="Resource" uid="uid://dc4il80avum0i" path="res://objects/ui/elements/button_group/buttons/green_turret.tres" id="9_p180d"]
 [ext_resource type="Resource" uid="uid://csjbw10wgrsy1" path="res://objects/ui/elements/button_group/buttons/green_turret_offset.tres" id="10_wx8yu"]
 [ext_resource type="Resource" uid="uid://bx05atkdrxgow" path="res://objects/ui/elements/button_group/buttons/purple_turret.tres" id="11_pis1s"]
 [ext_resource type="Resource" uid="uid://xedjyot5e78p" path="res://objects/ui/elements/button_group/buttons/purple_turret_offset.tres" id="12_bjbwx"]
+[ext_resource type="Resource" uid="uid://dr61bw8xud8y7" path="res://objects/ui/elements/button_group/buttons/blink.tres" id="17_tiudu"]
+[ext_resource type="Resource" uid="uid://rlr2aaf4phy3" path="res://objects/ui/elements/button_group/buttons/blink_offset.tres" id="18_la6ba"]
+[ext_resource type="Resource" uid="uid://b3kogouc2b5a7" path="res://objects/ui/elements/button_group/buttons/weak_block.tres" id="19_od8i3"]
+[ext_resource type="Resource" uid="uid://e1g7fpfscouq" path="res://objects/ui/elements/button_group/buttons/spike.tres" id="20_vlcgf"]
+[ext_resource type="Resource" uid="uid://b63dpdqnseiwd" path="res://objects/ui/elements/button_group/buttons/spike_offset.tres" id="21_uuv75"]
 
 [node name="EditorScreen" type="Control"]
 layout_mode = 3
@@ -27,9 +36,9 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_top = -10.0
-offset_right = 20.0
-offset_bottom = 10.0
+offset_top = -335.0
+offset_right = 154.0
+offset_bottom = 335.0
 grow_vertical = 2
 
 [node name="Actions" type="VBoxContainer" parent="Sidebar"]
@@ -41,7 +50,8 @@ layout_mode = 2
 [node name="InfoButton" type="Button" parent="Sidebar/Actions/Info"]
 custom_minimum_size = Vector2(100, 105)
 layout_mode = 2
-text = "Info"
+theme_type_variation = &"ToolButton"
+icon = ExtResource("2_w78r1")
 
 [node name="Play" type="HBoxContainer" parent="Sidebar/Actions"]
 layout_mode = 2
@@ -49,23 +59,24 @@ layout_mode = 2
 [node name="PlayButton" type="Button" parent="Sidebar/Actions/Play"]
 custom_minimum_size = Vector2(100, 105)
 layout_mode = 2
-text = "Play"
+theme_type_variation = &"ToolButton"
+icon = ExtResource("3_yroq8")
 
-[node name="ButtonGroup" parent="Sidebar/Actions" instance=ExtResource("2_ye877")]
+[node name="PlayerGroup" parent="Sidebar/Actions" instance=ExtResource("2_ye877")]
+layout_mode = 2
+buttons = Array[ExtResource("3_trccg")]([ExtResource("6_0yw3b"), ExtResource("7_u7cra")])
+
+[node name="TerrainGroup" parent="Sidebar/Actions" instance=ExtResource("2_ye877")]
 layout_mode = 2
 buttons = Array[ExtResource("3_trccg")]([ExtResource("4_2mws2"), ExtResource("5_8svv8"), ExtResource("6_1o5j7")])
 
-[node name="ButtonGroup2" parent="Sidebar/Actions" instance=ExtResource("2_ye877")]
+[node name="TurretGroup" parent="Sidebar/Actions" instance=ExtResource("2_ye877")]
 layout_mode = 2
 buttons = Array[ExtResource("3_trccg")]([ExtResource("7_hpo54"), ExtResource("8_hlv5t"), ExtResource("9_p180d"), ExtResource("10_wx8yu"), ExtResource("11_pis1s"), ExtResource("12_bjbwx")])
 
-[node name="ButtonGroup3" parent="Sidebar/Actions" instance=ExtResource("2_ye877")]
+[node name="PlayerGroup2" parent="Sidebar/Actions" instance=ExtResource("2_ye877")]
 layout_mode = 2
-buttons = Array[ExtResource("3_trccg")]([ExtResource("7_hpo54"), ExtResource("8_hlv5t"), ExtResource("9_p180d"), ExtResource("10_wx8yu"), ExtResource("11_pis1s"), ExtResource("12_bjbwx")])
-
-[node name="ButtonGroup4" parent="Sidebar/Actions" instance=ExtResource("2_ye877")]
-layout_mode = 2
-buttons = Array[ExtResource("3_trccg")]([ExtResource("7_hpo54"), ExtResource("8_hlv5t"), ExtResource("9_p180d"), ExtResource("10_wx8yu"), ExtResource("11_pis1s"), ExtResource("12_bjbwx")])
+buttons = Array[ExtResource("3_trccg")]([ExtResource("17_tiudu"), ExtResource("18_la6ba"), ExtResource("19_od8i3"), ExtResource("20_vlcgf"), ExtResource("21_uuv75")])
 
 [node name="LevelInfo" type="PopupPanel" parent="."]
 initial_position = 1

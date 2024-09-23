@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EditorButtonData" load_steps=3 format=3 uid="uid://xqu88g3063jo"]
+
+[ext_resource type="Texture2D" uid="uid://c82kevq26voih" path="res://objects/ui/assets/btn_end.tres" id="1_4po7u"]
+[ext_resource type="Script" path="res://objects/ui/elements/button_group/editor_button_data.gd" id="2_aqlc2"]
+
+[resource]
+script = ExtResource("2_aqlc2")
+icon = ExtResource("1_4po7u")
+tool_id = 13
+tooltip = "The end goal for the player."

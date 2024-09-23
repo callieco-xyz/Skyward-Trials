@@ -11,7 +11,7 @@ var tool_coords: Array[Vector2i] = [
 enum tool { 
 	WALL_BLOCK, SPIKE_BLOCK, SPIKES_OFFSET, BLINK_BLOCK, BLINK_OFFSET, WEAK_BLOCK,
 	TUR_RED, TUR_RED_OFFSET, TUR_GREEN, TUR_GREEN_OFFSET, TUR_PURPLE, TUR_PURPLE_OFFSET,
-	GROUND, DELETE }
+	START, END, GROUND, DELETE }
 
 
 # Called when the node enters the scene tree for the first time.

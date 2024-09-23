@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EditorButtonData" load_steps=3 format=3 uid="uid://b3kogouc2b5a7"]
+
+[ext_resource type="Texture2D" uid="uid://bllfdvqojsm7k" path="res://objects/ui/assets/btn_weak.tres" id="1_u1w25"]
+[ext_resource type="Script" path="res://objects/ui/elements/button_group/editor_button_data.gd" id="2_tpoh2"]
+
+[resource]
+script = ExtResource("2_tpoh2")
+icon = ExtResource("1_u1w25")
+tool_id = 5
+tooltip = "A block that disappears after you stand on it."

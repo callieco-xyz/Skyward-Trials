@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EditorButtonData" load_steps=3 format=3 uid="uid://c6cl4sm0n667w"]
+
+[ext_resource type="Texture2D" uid="uid://dibddoiqw6ah1" path="res://objects/ui/assets/btn_start.tres" id="1_ulipy"]
+[ext_resource type="Script" path="res://objects/ui/elements/button_group/editor_button_data.gd" id="2_oxad4"]
+
+[resource]
+script = ExtResource("2_oxad4")
+icon = ExtResource("1_ulipy")
+tool_id = 12
+tooltip = "The starting place for the player. Placing one will remove any others."

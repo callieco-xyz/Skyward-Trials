@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EditorButtonData" load_steps=3 format=3 uid="uid://e1g7fpfscouq"]
+
+[ext_resource type="Texture2D" uid="uid://bmlm2mwmr07k8" path="res://objects/ui/assets/btn_spike.tres" id="1_0tgxa"]
+[ext_resource type="Script" path="res://objects/ui/elements/button_group/editor_button_data.gd" id="2_vdsra"]
+
+[resource]
+script = ExtResource("2_vdsra")
+icon = ExtResource("1_0tgxa")
+tool_id = 1
+tooltip = "Dangerous spikes that activate on a timer."

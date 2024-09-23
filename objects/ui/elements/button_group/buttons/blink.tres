@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EditorButtonData" load_steps=3 format=3 uid="uid://dr61bw8xud8y7"]
+
+[ext_resource type="Texture2D" uid="uid://bi6iewskrubrk" path="res://objects/ui/assets/btn_blink.tres" id="1_hvbic"]
+[ext_resource type="Script" path="res://objects/ui/elements/button_group/editor_button_data.gd" id="2_ygkw2"]
+
+[resource]
+script = ExtResource("2_ygkw2")
+icon = ExtResource("1_hvbic")
+tool_id = 3
+tooltip = "A block that is only solid for a few seconds at a time."

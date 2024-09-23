@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EditorButtonData" load_steps=3 format=3 uid="uid://rlr2aaf4phy3"]
+
+[ext_resource type="Texture2D" uid="uid://gcdljrs1vfpi" path="res://objects/ui/assets/btn_blink_off.tres" id="1_1quv4"]
+[ext_resource type="Script" path="res://objects/ui/elements/button_group/editor_button_data.gd" id="2_moso7"]
+
+[resource]
+script = ExtResource("2_moso7")
+icon = ExtResource("1_1quv4")
+tool_id = 4
+tooltip = "A block that is only solid for a few seconds at a time, offset timing."
