@@ -3,7 +3,7 @@ extends Node
 
 var main_menu := preload("res://views/main_menu_view/main_menu_view.tscn")
 var play_map := preload("res://views/play_view/play_view.tscn")
-var edit_map := preload("res://objects/tilemaps/edit_map/edit_map.tscn")
+var edit_map := preload("res://views/edit_view/edit_view.tscn")
 
 @onready var game_canvas: CanvasLayer = $Game as CanvasLayer
 
@@ -27,8 +27,8 @@ func on_level_play_pressed(level_info: LevelInfo) -> void:
 
 
 func on_level_edit_pressed(level_info: LevelInfo) -> void:
-	var new_edit_map = edit_map.instantiate() as EditMap
-	new_edit_map.level_info = level_info
+	var new_edit_map = edit_map.instantiate()
+	new_edit_map.set_level_info(level_info)
 	change_level(new_edit_map)
 
 func change_level(new_level_scene: Node) -> void:

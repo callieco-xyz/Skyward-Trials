@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://ch6066bqbymmh"]
+[gd_scene load_steps=5 format=3 uid="uid://ch6066bqbymmh"]
 
 [ext_resource type="Script" path="res://objects/ui/elements/button_group/button_group.gd" id="1_rm0bi"]
+[ext_resource type="Script" path="res://objects/ui/elements/button_group/editor_button.gd" id="2_ilsx2"]
 [ext_resource type="Texture2D" uid="uid://urw4r7giaro0" path="res://components/theme/assets/ui_elements.png" id="2_nfjtw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bltlc"]
@@ -14,21 +15,23 @@ script = ExtResource("1_rm0bi")
 custom_minimum_size = Vector2(100, 105)
 layout_mode = 2
 theme_type_variation = &"ToolButton"
-toggle_mode = true
+action_mode = 0
+script = ExtResource("2_ilsx2")
 
 [node name="ExpandButton" type="TextureButton" parent="."]
 layout_mode = 2
 size_flags_vertical = 4
 texture_normal = SubResource("AtlasTexture_bltlc")
 
-[node name="Options" type="PopupPanel" parent="."]
+[node name="Options" type="PopupPanel" parent="." groups=["Popup"]]
+transparent_bg = true
 position = Vector2i(140, 0)
 size = Vector2i(316, 113)
-visible = true
 theme_type_variation = &"ButtonOptionPopup"
 
 [node name="Cols" type="HBoxContainer" parent="Options"]
 offset_right = 316.0
 offset_bottom = 113.0
 
+[connection signal="pressed" from="SelectedTool" to="." method="_on_selected_tool_pressed"]
 [connection signal="pressed" from="ExpandButton" to="." method="_on_expand_button_pressed"]

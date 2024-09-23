@@ -78,7 +78,7 @@ buttons = Array[ExtResource("3_trccg")]([ExtResource("7_hpo54"), ExtResource("8_
 layout_mode = 2
 buttons = Array[ExtResource("3_trccg")]([ExtResource("17_tiudu"), ExtResource("18_la6ba"), ExtResource("19_od8i3"), ExtResource("20_vlcgf"), ExtResource("21_uuv75")])
 
-[node name="LevelInfo" type="PopupPanel" parent="."]
+[node name="LevelInfo" type="PopupPanel" parent="." groups=["Popup"]]
 initial_position = 1
 size = Vector2i(400, 342)
 

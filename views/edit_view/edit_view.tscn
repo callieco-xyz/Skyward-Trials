@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwyseslnbx08g"]
+
+[ext_resource type="PackedScene" uid="uid://d08dj2nde4i82" path="res://objects/tilemaps/edit_map/edit_map.tscn" id="1_25nhu"]
+[ext_resource type="Script" path="res://views/edit_view/edit_view.gd" id="1_dvp2h"]
+[ext_resource type="PackedScene" uid="uid://bs88txmkt1ib8" path="res://objects/ui/screens/editor_screen/editor_screen.tscn" id="2_gttsg"]
+[ext_resource type="PackedScene" uid="uid://cqskdx88rntba" path="res://objects/cameras/editor_camera.tscn" id="2_tw1y3"]
+
+[node name="EditView" type="Node2D"]
+script = ExtResource("1_dvp2h")
+
+[node name="EditMap" parent="." instance=ExtResource("1_25nhu")]
+
+[node name="EditorCamera" parent="." instance=ExtResource("2_tw1y3")]
+zoom = Vector2(0.5, 0.5)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="EditorScreen" parent="UI" instance=ExtResource("2_gttsg")]

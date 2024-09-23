@@ -5,10 +5,9 @@ signal tool_selected(tool_id: int, tool_icon: AtlasTexture)
 
 var tool_id
 
-
 func _ready() -> void:
-	pressed.connect(on_pressed_button)
+	pressed.connect(tool_button_selected)
 
 
-func on_pressed_button() -> void:
+func tool_button_selected() -> void:
 	tool_selected.emit(tool_id, icon)

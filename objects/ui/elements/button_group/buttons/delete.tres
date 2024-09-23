@@ -6,5 +6,5 @@
 [resource]
 script = ExtResource("2_m4y2l")
 icon = ExtResource("1_e0ogk")
-tool_id = 13
+tool_id = 15
 tooltip = "Removes any object from the location, alternatively you can use the right mouse button when any other tool is selected."
