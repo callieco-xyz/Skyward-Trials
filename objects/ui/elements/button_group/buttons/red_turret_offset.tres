@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EditorButtonData" load_steps=3 format=3 uid="uid://cu603uql06gir"]
+
+[ext_resource type="Texture2D" uid="uid://dywqqy3x3wil8" path="res://objects/ui/assets/btn_twr_red_off.tres" id="1_mrqps"]
+[ext_resource type="Script" path="res://objects/ui/elements/button_group/editor_button_data.gd" id="2_v4qg7"]
+
+[resource]
+script = ExtResource("2_v4qg7")
+icon = ExtResource("1_mrqps")
+tool_id = 7
+tooltip = ""

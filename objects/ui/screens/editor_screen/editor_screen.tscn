@@ -1,19 +1,17 @@
-[gd_scene load_steps=9 format=3 uid="uid://bs88txmkt1ib8"]
+[gd_scene load_steps=13 format=3 uid="uid://bs88txmkt1ib8"]
 
-[ext_resource type="Texture2D" uid="uid://urw4r7giaro0" path="res://components/theme/assets/ui_elements.png" id="1_46i4i"]
 [ext_resource type="Script" path="res://objects/ui/screens/editor_screen/editor_screen.gd" id="1_srk7l"]
-[ext_resource type="Texture2D" uid="uid://tdnb2c5caquj" path="res://objects/ui/assets/btn_ground.tres" id="2_w2kec"]
 [ext_resource type="PackedScene" uid="uid://ch6066bqbymmh" path="res://objects/ui/elements/button_group/button_group.tscn" id="2_ye877"]
-[ext_resource type="Texture2D" uid="uid://bwr15vf2llmjh" path="res://objects/ui/assets/btn_wall.tres" id="4_qw1oq"]
-[ext_resource type="Texture2D" uid="uid://c6ylf2aodn6go" path="res://objects/ui/assets/btn_erase.tres" id="5_tq25r"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bltlc"]
-atlas = ExtResource("1_46i4i")
-region = Rect2(10, 160, 30, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ii5lo"]
-atlas = ExtResource("1_46i4i")
-region = Rect2(0, 200, 100, 100)
+[ext_resource type="Script" path="res://objects/ui/elements/button_group/editor_button_data.gd" id="3_trccg"]
+[ext_resource type="Resource" uid="uid://tny360bps7l0" path="res://objects/ui/elements/button_group/buttons/ground.tres" id="4_2mws2"]
+[ext_resource type="Resource" uid="uid://br5g3kxhp4c4s" path="res://objects/ui/elements/button_group/buttons/wall.tres" id="5_8svv8"]
+[ext_resource type="Resource" uid="uid://f0ne33bs3o5g" path="res://objects/ui/elements/button_group/buttons/delete.tres" id="6_1o5j7"]
+[ext_resource type="Resource" uid="uid://dxi48mk6qixo1" path="res://objects/ui/elements/button_group/buttons/red_turret.tres" id="7_hpo54"]
+[ext_resource type="Resource" uid="uid://cu603uql06gir" path="res://objects/ui/elements/button_group/buttons/red_turret_offset.tres" id="8_hlv5t"]
+[ext_resource type="Resource" uid="uid://dc4il80avum0i" path="res://objects/ui/elements/button_group/buttons/green_turret.tres" id="9_p180d"]
+[ext_resource type="Resource" uid="uid://csjbw10wgrsy1" path="res://objects/ui/elements/button_group/buttons/green_turret_offset.tres" id="10_wx8yu"]
+[ext_resource type="Resource" uid="uid://bx05atkdrxgow" path="res://objects/ui/elements/button_group/buttons/purple_turret.tres" id="11_pis1s"]
+[ext_resource type="Resource" uid="uid://xedjyot5e78p" path="res://objects/ui/elements/button_group/buttons/purple_turret_offset.tres" id="12_bjbwx"]
 
 [node name="EditorScreen" type="Control"]
 layout_mode = 3
@@ -55,106 +53,19 @@ text = "Play"
 
 [node name="ButtonGroup" parent="Sidebar/Actions" instance=ExtResource("2_ye877")]
 layout_mode = 2
-button_images = Array[AtlasTexture]([ExtResource("2_w2kec"), ExtResource("4_qw1oq"), ExtResource("5_tq25r")])
-button_tool_ids = Array[int]([12, 0, 13])
+buttons = Array[ExtResource("3_trccg")]([ExtResource("4_2mws2"), ExtResource("5_8svv8"), ExtResource("6_1o5j7")])
 
-[node name="Tool2" type="HBoxContainer" parent="Sidebar/Actions"]
+[node name="ButtonGroup2" parent="Sidebar/Actions" instance=ExtResource("2_ye877")]
 layout_mode = 2
+buttons = Array[ExtResource("3_trccg")]([ExtResource("7_hpo54"), ExtResource("8_hlv5t"), ExtResource("9_p180d"), ExtResource("10_wx8yu"), ExtResource("11_pis1s"), ExtResource("12_bjbwx")])
 
-[node name="SelectedTool" type="Button" parent="Sidebar/Actions/Tool2"]
-custom_minimum_size = Vector2(100, 105)
+[node name="ButtonGroup3" parent="Sidebar/Actions" instance=ExtResource("2_ye877")]
 layout_mode = 2
-text = "TOOL"
+buttons = Array[ExtResource("3_trccg")]([ExtResource("7_hpo54"), ExtResource("8_hlv5t"), ExtResource("9_p180d"), ExtResource("10_wx8yu"), ExtResource("11_pis1s"), ExtResource("12_bjbwx")])
 
-[node name="ExpandButton" type="TextureButton" parent="Sidebar/Actions/Tool2"]
+[node name="ButtonGroup4" parent="Sidebar/Actions" instance=ExtResource("2_ye877")]
 layout_mode = 2
-size_flags_vertical = 4
-texture_normal = SubResource("AtlasTexture_bltlc")
-
-[node name="Options" type="HBoxContainer" parent="Sidebar/Actions/Tool2"]
-layout_mode = 2
-
-[node name="ToolChoice1" type="Button" parent="Sidebar/Actions/Tool2/Options"]
-custom_minimum_size = Vector2(100, 105)
-layout_mode = 2
-text = "TOOL"
-
-[node name="ToolChoice2" type="Button" parent="Sidebar/Actions/Tool2/Options"]
-custom_minimum_size = Vector2(100, 105)
-layout_mode = 2
-text = "TOOL"
-
-[node name="ToolChoice3" type="Button" parent="Sidebar/Actions/Tool2/Options"]
-custom_minimum_size = Vector2(100, 105)
-layout_mode = 2
-text = "TOOL"
-
-[node name="Tool3" type="HBoxContainer" parent="Sidebar/Actions"]
-layout_mode = 2
-
-[node name="SelectedTool" type="Button" parent="Sidebar/Actions/Tool3"]
-custom_minimum_size = Vector2(100, 105)
-layout_mode = 2
-theme_type_variation = &"ToolButton"
-toggle_mode = true
-
-[node name="ExpandButton" type="TextureButton" parent="Sidebar/Actions/Tool3"]
-layout_mode = 2
-size_flags_vertical = 4
-texture_normal = SubResource("AtlasTexture_bltlc")
-
-[node name="Options" type="HBoxContainer" parent="Sidebar/Actions/Tool3"]
-visible = false
-layout_mode = 2
-
-[node name="ToolChoice1" type="Button" parent="Sidebar/Actions/Tool3/Options"]
-custom_minimum_size = Vector2(100, 105)
-layout_mode = 2
-text = "TOOL"
-
-[node name="ToolChoice2" type="Button" parent="Sidebar/Actions/Tool3/Options"]
-custom_minimum_size = Vector2(100, 105)
-layout_mode = 2
-text = "TOOL"
-
-[node name="ToolChoice3" type="Button" parent="Sidebar/Actions/Tool3/Options"]
-custom_minimum_size = Vector2(100, 105)
-layout_mode = 2
-text = "TOOL"
-
-[node name="Tool4" type="HBoxContainer" parent="Sidebar/Actions"]
-layout_mode = 2
-
-[node name="SelectedTool" type="Button" parent="Sidebar/Actions/Tool4"]
-custom_minimum_size = Vector2(100, 105)
-layout_mode = 2
-theme_type_variation = &"ToolButton"
-toggle_mode = true
-icon = SubResource("AtlasTexture_ii5lo")
-
-[node name="ExpandButton" type="TextureButton" parent="Sidebar/Actions/Tool4"]
-layout_mode = 2
-size_flags_vertical = 4
-texture_normal = SubResource("AtlasTexture_bltlc")
-
-[node name="Options" type="HBoxContainer" parent="Sidebar/Actions/Tool4"]
-visible = false
-layout_mode = 2
-
-[node name="ToolChoice1" type="Button" parent="Sidebar/Actions/Tool4/Options"]
-custom_minimum_size = Vector2(100, 105)
-layout_mode = 2
-text = "TOOL"
-
-[node name="ToolChoice2" type="Button" parent="Sidebar/Actions/Tool4/Options"]
-custom_minimum_size = Vector2(100, 105)
-layout_mode = 2
-text = "TOOL"
-
-[node name="ToolChoice3" type="Button" parent="Sidebar/Actions/Tool4/Options"]
-custom_minimum_size = Vector2(100, 105)
-layout_mode = 2
-text = "TOOL"
+buttons = Array[ExtResource("3_trccg")]([ExtResource("7_hpo54"), ExtResource("8_hlv5t"), ExtResource("9_p180d"), ExtResource("10_wx8yu"), ExtResource("11_pis1s"), ExtResource("12_bjbwx")])
 
 [node name="LevelInfo" type="PopupPanel" parent="."]
 initial_position = 1

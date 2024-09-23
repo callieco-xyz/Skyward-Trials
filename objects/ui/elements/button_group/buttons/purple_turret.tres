@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EditorButtonData" load_steps=3 format=3 uid="uid://bx05atkdrxgow"]
+
+[ext_resource type="Texture2D" uid="uid://bjja35j1jia5k" path="res://objects/ui/assets/btn_twr_prp.tres" id="1_qxtfc"]
+[ext_resource type="Script" path="res://objects/ui/elements/button_group/editor_button_data.gd" id="2_8p2vr"]
+
+[resource]
+script = ExtResource("2_8p2vr")
+icon = ExtResource("1_qxtfc")
+tool_id = 10
+tooltip = "Fires projectiles outward in a ring."

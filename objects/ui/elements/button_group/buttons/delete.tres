@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EditorButtonData" load_steps=3 format=3 uid="uid://f0ne33bs3o5g"]
+
+[ext_resource type="Texture2D" uid="uid://c6ylf2aodn6go" path="res://objects/ui/assets/btn_erase.tres" id="1_e0ogk"]
+[ext_resource type="Script" path="res://objects/ui/elements/button_group/editor_button_data.gd" id="2_m4y2l"]
+
+[resource]
+script = ExtResource("2_m4y2l")
+icon = ExtResource("1_e0ogk")
+tool_id = 13
+tooltip = "Removes any object from the location, alternatively you can use the right mouse button when any other tool is selected."

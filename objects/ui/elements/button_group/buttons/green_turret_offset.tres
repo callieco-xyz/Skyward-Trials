@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EditorButtonData" load_steps=3 format=3 uid="uid://csjbw10wgrsy1"]
+
+[ext_resource type="Texture2D" uid="uid://dcab5su7v0ao7" path="res://objects/ui/assets/btn_twr_grn_off.tres" id="1_tob3w"]
+[ext_resource type="Script" path="res://objects/ui/elements/button_group/editor_button_data.gd" id="2_wmudm"]
+
+[resource]
+script = ExtResource("2_wmudm")
+icon = ExtResource("1_tob3w")
+tool_id = 9
+tooltip = "Fires repeatedly in 4 directions, offset firing time."

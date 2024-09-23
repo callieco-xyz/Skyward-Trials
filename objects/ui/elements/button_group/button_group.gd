@@ -1,8 +1,7 @@
 extends HBoxContainer
 
 
-@export var button_images: Array[AtlasTexture]
-@export var button_tool_ids: Array[tool]
+@export var buttons: Array[EditorButtonData]
 
 var popup_offset := Vector2(140.0, 0.0)
 
@@ -18,26 +17,29 @@ enum tool {
 
 
 func _ready() -> void:
-	if button_images.size() > 0:
+	if buttons.size() > 0:
 		set_first_button()
 		create_buttons()
 
 
 func set_first_button() -> void:
-	selected_tool.icon = button_images[0]
+	selected_tool.icon = buttons[0].icon
 
 
 func create_buttons() -> void:
 	var i := 0
-	for button_image in button_images:
-		create_button(button_image, button_tool_ids[i])
+	for button in buttons:
+		create_button(buttons[i])
+		i += 1
 
 
-func create_button(new_icon: AtlasTexture, tool_id: int) -> void:
+func create_button(button: EditorButtonData) -> void:
 	var new_button = EditorButton.new()
 	new_button.toggle_mode = true
 	new_button.theme_type_variation = "ToolButton"
-	new_button.icon = new_icon
+	new_button.icon = button.icon
+	new_button.tool_id = button.tool_id
+	new_button.tooltip_text = button.tooltip
 	cols.add_child(new_button)
 
 
